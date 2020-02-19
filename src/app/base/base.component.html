@@ -1,11 +1,1 @@
-<ng-container [ngSwitch]="mode">
-  <ng-container *ngSwitchCase="'create'">
-    <app-create (createEvent)="create()" [data]="data"></app-create>
-  </ng-container>
-  <ng-container *ngSwitchCase="'update'">
-    <app-update (updateEvent)="update()"></app-update>
-  </ng-container>
-  <ng-container *ngSwitchCase="'view'">
-    <app-view></app-view>
-  </ng-container>
-</ng-container>
+<ng-container [ngTemplateOutlet]='templateRef' [ngTemplateOutletContext]="{context:this}"></ng-container>

@@ -2,7 +2,19 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <app-base [mode]="'update'"></app-base>
-  <app-base [mode]="'create'"></app-base>
-  <app-base [mode]="'view'"></app-base>
+  <app-base [mode]="'update'">
+    <ng-template #template>
+      <app-update></app-update>
+    </ng-template>
+  </app-base>
+  <app-base [mode]="'create'">
+    <ng-template #template let-option>
+      <app-create></app-create>
+    </ng-template>
+  </app-base>
+  <app-base [mode]="'view'">
+    <ng-template #template>
+      <app-view></app-view>
+    </ng-template>
+  </app-base>
 </div>

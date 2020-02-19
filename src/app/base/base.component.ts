@@ -1,4 +1,4 @@
-import { Component, OnInit, ContentChild, TemplateRef, Input } from '@angular/core';
+import { Component, OnInit, ContentChild, TemplateRef, Input, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-base',
@@ -8,16 +8,19 @@ import { Component, OnInit, ContentChild, TemplateRef, Input } from '@angular/co
 export class BaseComponent implements OnInit {
   @ContentChild('template')
   templateRef: TemplateRef<any>;
+
   @Input()
   mode: string;
 
   data = {
     key: 'value'
-  }
+  };
 
   constructor() { }
 
   ngOnInit() {
+    console.log(this.templateRef);
+    console.log(this)
   }
 
   onClick($event) {
